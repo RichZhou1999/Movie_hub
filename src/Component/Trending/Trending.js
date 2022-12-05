@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SingleComponent from "../../SingleComponent/SingleComponent"
 import "./Trending.css"
+import CustomPagination from '../../Component/CustomPagination/CustomPagination';
 
 const Trending = ()=>{
     const fetechTrending = async() =>{
@@ -42,7 +43,7 @@ const Trending = ()=>{
             }))
         }
         </div>
-
+        <CustomPagination/>
         </>
     )
 }

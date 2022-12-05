@@ -4,11 +4,13 @@
     flex-direction: row;
     justify-content: space-evenly;
     bottom:0;
+    background:black;
+    color:red;
     /* text-align: center; */
     /* text-align: left; */
     font-size: 5vh;
     background-color: pink;
-    width:100vw;
+    min-width: 100vw;
     /* min-width: 100vw; */
     /* display:grid; */
     /* padding:100px; */
