@@ -1,0 +1,28 @@
+.media{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    /* border-width: 1vh; */
+    position:relative;
+    width:300px;
+    padding:5px;
+    background-color: #282c34;
+    margin:5px;
+    color:white;
+}
+.media:hover{
+    background-color: white;
+    color:black;
+}
+.single_title{
+    display:flex;
+    justify-content: center;
+    padding:5px;
+}
+
+.single_type_time{
+    display:flex;
+    justify-content: space-between;
+    padding-bottom: 3px;
+    /* font-size: 20px; */
+}
