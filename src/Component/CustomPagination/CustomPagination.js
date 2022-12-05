@@ -12,6 +12,7 @@ export default function CustomPagination({ setPage, numOfPages = 10 }) {
   // Scroll to top when page changes
   const handlePageChange = (page) => {
     setPage(page);
+    console.log(page);
     window.scroll(0, 0);
   };
 

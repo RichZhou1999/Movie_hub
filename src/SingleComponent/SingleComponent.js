@@ -1,14 +1,17 @@
 import "./SingleComponent.css"
+import TransitionsModal from "../Component/TransitionModal/TransitionModal";
+import { img_300 } from "../config/config";
 
 const SingleComponent =(
     props
     // backdrop_path, id, title, poster_path, 
     // media_type, genre_ids, popularity,vote_average
 )=>{
-    const img_300 = "https://image.tmdb.org/t/p/w300"
+    // const img_300 = "https://image.tmdb.org/t/p/w300"
     console.log(`${img_300}/${props.poster}`);
     return(
         <>
+        <TransitionsModal props={props}>
         <div className="media">
         <img src={`${img_300}/${props.poster}`} />
         <div>
@@ -27,6 +30,7 @@ const SingleComponent =(
         </div>
         </div>
         </div>
+        </TransitionsModal>
         </>
     )
 }

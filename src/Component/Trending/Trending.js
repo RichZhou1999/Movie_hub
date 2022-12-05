@@ -4,15 +4,20 @@ import SingleComponent from "../../SingleComponent/SingleComponent"
 import "./Trending.css"
 import CustomPagination from '../../Component/CustomPagination/CustomPagination';
 
+
+
 const Trending = ()=>{
+    const [totalPages, setTotalPages] = useState(0)
+    const [page, setPage] = useState(0)
     const fetechTrending = async() =>{
         const {data} = await axios.get(
-            `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=1`
+            `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page={page}`
         )
         // console.log(data)
-        console.log(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=1`)
-        console.log(data.results)
+        console.log(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page={page}`)
+        // console.log(data.results)
         setData(data.results)
+        setTotalPages(data.total_pages)
     }
 
     const [data, setData] = useState([]);
@@ -24,7 +29,7 @@ const Trending = ()=>{
         // data.map((item, i)=>{console.log(item.title);
         // } )
         
-    },[data])
+    },[data,page,totalPages])
     return (
         <>
         <p>Trending</p>
@@ -39,11 +44,12 @@ const Trending = ()=>{
                 title={item.title || item.name}
                 date={item.release_date || item.first_air_date}
                 poster={item.poster_path}
-                media_type={item.media_type}/>
+                media_type={item.media_type}
+                overview={item.overview}/>
             }))
         }
         </div>
-        <CustomPagination/>
+        <CustomPagination setPage={setPage} numOfPages={totalPages}/>
         </>
     )
 }
