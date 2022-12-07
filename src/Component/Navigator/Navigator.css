@@ -4,8 +4,10 @@
     flex-direction: row;
     justify-content: space-evenly;
     bottom:0;
+    /* margin-top: 10vh; */
     background:black;
     color:red;
+    margin-top:2vh;
     /* text-align: center; */
     /* text-align: left; */
     font-size: 5vh;
@@ -17,6 +19,6 @@
     /* margin:10px; */
     /* padding-left: 20px; */
     /* padding-left: 100px; */
-    padding-right: 200px;
+    /* padding-right: 200px; */
     z-index:100;
 }

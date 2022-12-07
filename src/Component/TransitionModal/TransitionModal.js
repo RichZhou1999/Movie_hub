@@ -53,15 +53,15 @@ export default function TransitionsModal({props, children}) {
         const {data} = await axios.get(
         `https://api.themoviedb.org/3/${props.media_type}/${props.id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     )
-    console.log(data);
-    setMoviePath(data.results[0].key)
+    // console.log(data);
+    setMoviePath(data.results[0]?.key)
     }
     getMoviePath()
     }
 
     React.useEffect(()=>{
         fetchmovie();
-    })
+    },)
 
   return (
     <div>
@@ -86,7 +86,7 @@ export default function TransitionsModal({props, children}) {
             <img src={`${img_300}/${props.poster}`} className='transition_img'/>
             </Typography>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              <span style={{color:"white"}}> {props.title}</span> <span style={{color:"white"}}>({props.date.substr(0,4)}) </span>
+              <span style={{color:"white"}}> {props.title}</span> <span style={{color:"white"}}>({props.date ? props.date.substr(0,4) : "unknown"}) </span>
             </Typography>
             <Typography id="transition-modal-description" sx={{ mt: 2 }}>
               <div className="transition_description">{props.overview}</div>

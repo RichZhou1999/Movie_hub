@@ -8,7 +8,7 @@ const SingleComponent =(
     // media_type, genre_ids, popularity,vote_average
 )=>{
     // const img_300 = "https://image.tmdb.org/t/p/w300"
-    console.log(`${img_300}/${props.poster}`);
+    // console.log(`${img_300}/${props.poster}`);
     return(
         <>
         <TransitionsModal props={props}>

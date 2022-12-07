@@ -7,14 +7,14 @@ import CustomPagination from '../../Component/CustomPagination/CustomPagination'
 
 
 const Trending = ()=>{
-    const [totalPages, setTotalPages] = useState(0)
-    const [page, setPage] = useState(0)
+    const [totalPages, setTotalPages] = useState(1)
+    const [page, setPage] = useState(1)
     const fetechTrending = async() =>{
         const {data} = await axios.get(
-            `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page={page}`
+            `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
         )
         // console.log(data)
-        console.log(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page={page}`)
+        console.log(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`)
         // console.log(data.results)
         setData(data.results)
         setTotalPages(data.total_pages)
@@ -22,17 +22,19 @@ const Trending = ()=>{
 
     const [data, setData] = useState([]);
     useEffect(()=>{
-        console.log(data.length)
-        if(data.length == 0){
-          fetechTrending();
-        }
+        console.log(data.length);
+        console.log(page);
+        fetechTrending();
+        // if(data.length == 0){
+        //   fetechTrending();
+        // }
         // data.map((item, i)=>{console.log(item.title);
         // } )
         
-    },[data,page,totalPages])
+    },[page])
     return (
         <>
-        <p>Trending</p>
+        <h1 style={{marginTop:"8vh", paddingTop:"1vh", textAlign:"center", fontSize:50}}>Trending</h1>
         <div className='trendingStyle'>
         {
             data.length == 0 ?
