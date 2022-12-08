@@ -3,8 +3,8 @@ import axios from 'axios';
 import SingleComponent from "../../SingleComponent/SingleComponent"
 import "./Trending.css"
 import CustomPagination from '../../Component/CustomPagination/CustomPagination';
-
-
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
 
 const Trending = ()=>{
     const [totalPages, setTotalPages] = useState(1)
@@ -25,16 +25,11 @@ const Trending = ()=>{
         console.log(data.length);
         console.log(page);
         fetechTrending();
-        // if(data.length == 0){
-        //   fetechTrending();
-        // }
-        // data.map((item, i)=>{console.log(item.title);
-        // } )
         
     },[page])
     return (
         <>
-        <h1 style={{marginTop:"8vh", paddingTop:"1vh", textAlign:"center", fontSize:50}}>Trending</h1>
+        <div style={{marginTop:"8vh", paddingTop:"1vh", textAlign:"center", fontSize:50}}>Trending</div>
         <div className='trendingStyle'>
         {
             data.length == 0 ?
@@ -47,7 +42,8 @@ const Trending = ()=>{
                 date={item.release_date || item.first_air_date}
                 poster={item.poster_path}
                 media_type={item.media_type}
-                overview={item.overview}/>
+                overview={item.overview}
+                vote_average={Math.round(item.vote_average*10)/10}/>
             }))
         }
         </div>

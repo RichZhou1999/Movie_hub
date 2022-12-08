@@ -24,7 +24,7 @@ export default function CustomPagination({ setPage, numOfPages = 10 }) {
         justifyContent: "center",
         // marginTop: "10vh",
         backgroundColor: "#ffc0cb",
-        marginBottom:"5vh"
+        // marginBottom:"8vh"
         // padding:"100px",
 
         // color:"blue"

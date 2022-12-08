@@ -1,0 +1,13 @@
+.MovieStyle{
+    display:flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+}  
+/* .MovieTitle{
+    justify-content: center;
+    text-align: center;
+    margin-top:8vh;
+    font-size: 50;
+    padding-top:"1vh";
+} */

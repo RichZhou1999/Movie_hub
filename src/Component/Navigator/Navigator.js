@@ -79,7 +79,7 @@ function Navigator() {
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
-          className={classes.root}
+          sx={classes.root}
         >
           {/* <BottomNavigationAction label="Recents"  />
           <BottomNavigationAction label="Favorites"  />

@@ -1,6 +1,7 @@
 import "./SingleComponent.css"
 import TransitionsModal from "../Component/TransitionModal/TransitionModal";
 import { img_300 } from "../config/config";
+import Badge from '@mui/material/Badge';
 
 const SingleComponent =(
     props
@@ -12,7 +13,13 @@ const SingleComponent =(
     return(
         <>
         <TransitionsModal props={props}>
+
+        {/* "vote_average" */}
         <div className="media">
+        <Badge
+        badgeContent={props.vote_average}
+        color= {props.vote_average>7 ? "primary" : "secondary"}
+        />
         <img src={`${img_300}/${props.poster}`} />
         <div>
         {
