@@ -56,7 +56,7 @@ export default function TransitionsModal({props, children}) {
     // console.log(data);
     setMoviePath(data.results[0]?.key)
     }
-    getMoviePath()
+    getMoviePath();
     }
 
     React.useEffect(()=>{

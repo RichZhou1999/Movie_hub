@@ -62,6 +62,8 @@ function Navigator() {
         navigate("/movie");
       }else if (value == 2){
         navigate("/series");
+      }else if (value == 3){
+        navigate("search");
       }
     },[value])
     return (
@@ -87,6 +89,7 @@ function Navigator() {
           <BottomNavigationAction label="Trending" icon={<WhatshotIcon style={{ fontSize:"3vh"}}/>} />
           <BottomNavigationAction label="Movie" icon={<LiveTvIcon style={{ fontSize:"3vh"}}/>}/>
           <BottomNavigationAction label="Series" icon={<TvIcon style={{  fontSize:"3vh"}}/>} />
+          <BottomNavigationAction label="Search" icon={<TvIcon style={{  fontSize:"3vh"}}/>} />
         </BottomNavigation>
       {/* </Box> */}
       </div>
